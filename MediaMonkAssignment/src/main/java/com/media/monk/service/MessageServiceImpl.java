@@ -7,6 +7,7 @@ import com.media.monk.repository.MessageRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 @Service
 public class MessageServiceImpl implements MessageService{
@@ -22,8 +23,11 @@ public class MessageServiceImpl implements MessageService{
 	
 	@Override
 	public Message getMessageByKey(String key) {
-		Message msg = messageRepository.getMessageByKey(key);
-		return msg;
+		List<Message> msgs = messageRepository.getMessageByKey(key);
+		if (CollectionUtils.isEmpty(msgs)) {
+			return null;
+		}
+		return msgs.get(0);
 	}
 
 	@Override
