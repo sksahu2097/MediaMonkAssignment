@@ -9,12 +9,12 @@ services:
       - POSTGRES_PASSWORD=admin
     volumes:
       - ~/docker-data/media-monk-message-db:/var/lib/postgresql/data
-      - ./postgres/message-schema.sql:/docker-entrypoint-initdb.d/message-schema.sql
+      - ./postgress/message-schema.sql:/docker-entrypoint-initdb.d/message-schema.sql
 
-service:
+  service:
     container_name: media-monk-message-service
     build:
-      context: ./media-monk-message-service
+      context: ./MediaMonkAssignment
     restart: always
     ports:
       - 8080:8080

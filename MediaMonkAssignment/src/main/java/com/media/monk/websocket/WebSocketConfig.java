@@ -1,5 +1,8 @@
 package com.media.monk.websocket;
 
+import com.media.monk.service.MessageService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -12,21 +15,24 @@ import org.springframework.web.socket.server.support.HttpSessionHandshakeInterce
 @EnableWebSocket
 public class WebSocketConfig implements WebSocketConfigurer {
 
+	@Autowired
+	MessageService messageService;
+	
     private String ENDPOINT = "/ws/message";
     
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         // TODO Auto-generated method stub
-        registry.addHandler(new WebSocketMessageHandler(), ENDPOINT)
+        registry.addHandler(new WebSocketMessageHandler(messageService), ENDPOINT)
         .setHandshakeHandler(new UserHandShakeHandler())
         .setAllowedOriginPatterns("*")
         .addInterceptors(new HttpSessionHandshakeInterceptor());
         //System.out.println("registory done!!! "+ ENDPOINT);
 
     }
-    
+
     @Bean
-    public ServletServerContainerFactoryBean createWebSocketContainer() {
+    ServletServerContainerFactoryBean createWebSocketContainer() {
         ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
         container.setMaxTextMessageBufferSize(256_000);
         container.setMaxBinaryMessageBufferSize(256_000);

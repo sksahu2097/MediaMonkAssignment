@@ -1,5 +1,8 @@
 package com.media.monk.websocket;
 
+import com.media.monk.model.Message;
+import com.media.monk.service.MessageService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketMessage;
@@ -14,8 +17,12 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
  */
 public class WebSocketMessageHandler extends TextWebSocketHandler {
     
+	
+	private MessageService messageService;
+	
     @Autowired
-    public WebSocketMessageHandler () {
+    public WebSocketMessageHandler (MessageService messageService) {
+    	this.messageService = messageService;
         System.out.println("Obj created =>");
     }
     
@@ -40,6 +47,9 @@ public class WebSocketMessageHandler extends TextWebSocketHandler {
         // TODO Auto-generated method stub
         //super.handleMessage(session, message);
         System.out.println("Handle Message => " + message.getPayload());
+        String arr[] = message.getPayload().toString().split("=");
+        
+        messageService.insertMessage(new Message().setKey(arr[0].trim()).setValue(arr[1].trim()));
     }
     
     @Override
