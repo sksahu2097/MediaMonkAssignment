@@ -35,7 +35,7 @@ Type "help" for help.
 admin=# \d
              List of relations
  Schema |      Name      |   Type   | Owner
---------+----------------+----------+-------
+--- | --- | ---
  public | message        | table    | admin
  public | message_id_seq | sequence | admin
 (2 rows)
