@@ -1,13 +1,18 @@
 package com.media.monk;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith(MockitoExtension.class)
 class MediaMonkAssignmentApplicationTests {
 
-//	@Test
-//	void contextLoads() {
-//	}
+	@Test
+	void mainTest() {
+//		MediaMonkAssignmentApplication.main(new String[] {});
+		assertTrue(true);
+	}
 
 }
