@@ -44,3 +44,5 @@ List of relations
 public | message        | table    | admin
 public | message_id_seq | sequence | admin
 
+
+Implemented JUnit test case for the unit testing in the local.
