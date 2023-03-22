@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+/**
+ * This class have all the implementation of Message Service.
+ * @author Santosh Sahu
+ */
 @Service
 public class MessageServiceImpl implements MessageService{
 
