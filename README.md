@@ -26,9 +26,12 @@ API implemented to test:-
  1. Get => localhost:8080/message-check/{key} =>  get the value by key
  2. websocket => localhost:8080/ws/message => connect over websocket
  
- Steps to get into the postgress database
- PS C:\Users\Santosh Sahu> docker exec -it media-monk-message-db bash
+Steps to get into the postgress database
+
+PS C:\Users\Santosh Sahu> docker exec -it media-monk-message-db bash
+
 root@e949e70ecad2:/# psql -U admin
+
 psql (15.1 (Debian 15.1-1.pgdg110+1))
 Type "help" for help.
 
