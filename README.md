@@ -33,10 +33,11 @@ psql (15.1 (Debian 15.1-1.pgdg110+1))
 Type "help" for help.
 
 admin=# \d
-             List of relations
+
+List of relations
+
  Schema |      Name      |   Type   | Owner
---- | --- | ---
- public | message        | table    | admin
- public | message_id_seq | sequence | admin
-(2 rows)
+--- | --- | --- | ---
+public | message        | table    | admin
+public | message_id_seq | sequence | admin
 
