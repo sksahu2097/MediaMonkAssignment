@@ -2,6 +2,8 @@ package com.media.monk.websocket;
 
 import com.media.monk.service.MessageService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 	MessageService messageService;
 	
     private String ENDPOINT = "/ws/message";
+    private Logger logger = LoggerFactory.getLogger(WebSocketConfig.class);
     
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
@@ -27,7 +30,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
         .setHandshakeHandler(new UserHandShakeHandler())
         .setAllowedOriginPatterns("*")
         .addInterceptors(new HttpSessionHandshakeInterceptor());
-        //System.out.println("registory done!!! "+ ENDPOINT);
+        logger.info("registory done!!! = {} ", ENDPOINT);
 
     }
 
