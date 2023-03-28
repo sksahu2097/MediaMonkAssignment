@@ -1,0 +1,12 @@
+{
+  "name": "nodejsmediamonkassignment",
+  "version": "1.0.0",
+  "description": "Media monk assignment node js + typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.ts"
+  },
+  "author": "santosh kumar sahu",
+  "license": "MIT"
+}
