@@ -29,5 +29,10 @@ services:
     container_name: media-monk-node-message-server
     build:
       context: ./nodeJsMediaMonkAssignment
+    restart: always
     ports:
       - 3000:3000
+    depends_on:
+      - database
+    links:
+      - database
