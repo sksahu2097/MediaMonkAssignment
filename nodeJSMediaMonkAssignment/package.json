@@ -2,11 +2,19 @@
   "name": "nodejsmediamonkassignment",
   "version": "1.0.0",
   "description": "Media monk assignment node js + typescript",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.ts"
+    "start": "npx ts-node src/server.ts"
   },
   "author": "santosh kumar sahu",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "json-server": "^0.17.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }

@@ -25,3 +25,9 @@ services:
       - database
     links:
       - database
+  nodejs-server:
+    container_name: media-monk-node-message-server
+    build:
+      context: ./nodeJsMediaMonkAssignment
+    ports:
+      - 3000:3000

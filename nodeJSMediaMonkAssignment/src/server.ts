@@ -1,8 +1,12 @@
+
+import { getMessage } from "./service/messageProcessor";
+
 const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get("/message-check/:key", (req, res) => {
+app.get("/message-check/:key", (req:any, res:any) => {
+  getMessage("Hello");
   res.send("Hello World! Hey = "+req.params.key);
 });
 
