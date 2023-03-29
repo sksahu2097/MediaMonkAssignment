@@ -8,6 +8,8 @@ Technology used:-
   3. websocket
   4. postgres SQL
   5. docker
+  6. nodeJs
+  7. typeScript
   
 We have used docker for faster deployment we have created 2 containers for postgres, webservice.
 
@@ -22,9 +24,14 @@ It will take few minutes and it will start.
 
 steps to connect to websocket => (https://learning.postman.com/docs/sending-requests/websocket/websocket/)
 
-API implemented to test:-
+API implemented to test Spring boot:-
  1. Get => localhost:8080/message-check/{key} =>  get the value by key
  2. websocket => localhost:8080/ws/message => connect over websocket
+ 
+ 
+ API implemented to test Node Js:-
+ 1. Get => localhost:3000/message-check/{key} =>  get the value by key
+ 2. websocket => ws://localhost:3001 => connect over websocket
  
 Steps to get into the postgress database
 
